@@ -89,7 +89,6 @@ def nb_train(train_data):
     ### Uncomment two lines below and you will pass the train model unit test ###
     model = summarize_by_class(train_data)
     return model
-    return None
 
 #######
 # Complete this functions:
