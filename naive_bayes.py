@@ -96,14 +96,19 @@ def nb_train(train_data):
 # Predict the class for a given row
 #######
 def nb_predict(summaries, row):
+    # Calculate probabilities for each class given the row
     probabilities = calculate_class_probabilities(summaries, row)
-    best_label, best_prob = None, -1
+    
+    # Find the class with the highest probability
+    best_label = None
+    best_prob = -1
     for class_value, probability in probabilities.items():
         if best_label is None or probability > best_prob:
-            best_prob = probability
             best_label = class_value
-    return best_label
+            best_prob = probability
     
+    return best_label
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Naive Bayes Classifier")
